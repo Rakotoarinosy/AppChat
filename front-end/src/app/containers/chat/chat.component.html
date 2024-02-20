@@ -1,1 +1,25 @@
-<p>chat works!</p>
+<div class="container">
+  <app-username (userNameEvent)="userNameUpdate($event)" *ngIf="!userName"></app-username>
+  <h1>Component programing - Chat App</h1>
+  <div class="chatbox">
+    <div class="chatbox__user-list">
+      <h2>User List</h2>
+      <div class="chatbox__user--active" *ngFor="let user of userList">
+        <p>{{ user }}</p>
+      </div>
+    </div>
+    <div class="message_list">
+      <div class="chatbox__messages" *ngFor="let msg of messageList" [ngClass]="{mine: msg.mine}">
+        <div class="user-message">
+          <div class="message-box">
+            <p class="name">{{msg.userName}}</p>
+            <br>
+            <p class="message">{{msg.message}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <input type="text" placeholder="message" [(ngModel)]="message">
+  <button (click)="sendMessage()">send</button>
+</div>

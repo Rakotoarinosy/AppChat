@@ -23,11 +23,11 @@ io.on("connection", (socket) => {
     let userName = socket.handshake.query.userName;
     addUser(userName, socket.id);
 
-    socket.broadcoast.emit('user_list', [...userList.keys()]);
+    socket.broadcast.emit('user_list', [...userList.keys()]);
     socket.emit('user_List', [...userList.keys()]);
 
     socket.on('message', (msg) => {
-        socket.broadcoast.emit('message-broadcoast', {message: msg, userName: userName});
+        socket.broadcast.emit('message-broadcast', {message: msg, userName: userName});
     })
 
     socket.on('disconnect', (reason) => {
