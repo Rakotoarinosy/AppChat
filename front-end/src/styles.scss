@@ -1,1 +1,84 @@
 /* You can add global styles to this file, and also import other style files */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.chatbox {
+  display: flex;
+}
+
+.chatbox__user-list {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.chatbox__user-list h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.chatbox__user--active {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.message_list {
+  flex: 2;
+}
+
+.chatbox__messages {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.mine .user-message {
+  text-align: right; /* Messages de l'utilisateur à droite */
+}
+
+.user-message {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #e6e6e6;
+  border-radius: 10px;
+}
+
+.user-message .name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.message {
+  margin: 0;
+}
+
+input[type="text"] {
+  width: calc(100% - 80px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
